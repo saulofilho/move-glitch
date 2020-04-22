@@ -19,19 +19,30 @@ let i = 0;
 const images = [
   'https://saulofilho.github.io/photos/ThePhotosWereGreat/imgs/imgsLow/NYBikeGreenBlack.jpg',
   'https://saulofilho.github.io/photos/ThePhotosWereGreat/imgs/imgsLow/LABikeBlueWheelsBlueWhite.jpg',
-].map(src => {
+].map(source => {
   const image = document.createElement('img');
-  image.src = src;
+  image.src = source;
   return image;
 });
 
-document.addEventListener('mousemove', function(event) {
-  aimX = event.pageX;
-  aimY = event.pageY;
-  if (currentX === null) {
-    currentX = event.pageX;
-    currentY = event.pageY;
-  }
+// document.addEventListener('mousemove', function(event) {
+//   aimX = event.pageX;
+//   aimY = event.pageY;
+//   if (currentX === null) {
+//     currentX = event.pageX;
+//     currentY = event.pageY;
+//   }
+// });
+
+['mousemove', 'touchmove'].forEach(function(e) {
+  document.addEventListener(e, function(event) {
+    aimX = event.pageX;
+    aimY = event.pageY;
+    if (currentX === null) {
+      currentX = event.pageX;
+      currentY = event.pageY;
+    }
+  });
 });
 
 canvasTag.addEventListener('click', function() {
