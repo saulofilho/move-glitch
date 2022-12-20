@@ -4,7 +4,7 @@ canvasTag.width = window.innerWidth * 2;
 canvasTag.height = window.innerHeight * 2;
 
 canvasTag.style.width = window.innerWidth + 'px';
-canvasTag.style.Height = window.innerHeight + 'px';
+canvasTag.style.height = window.innerHeight + 'px';
 
 const context = canvasTag.getContext('2d');
 context.scale(2, 2);
@@ -24,15 +24,6 @@ const images = [
   image.src = source;
   return image;
 });
-
-// document.addEventListener('mousemove', function(event) {
-//   aimX = event.pageX;
-//   aimY = event.pageY;
-//   if (currentX === null) {
-//     currentX = event.pageX;
-//     currentY = event.pageY;
-//   }
-// });
 
 ['mousemove', 'touchmove'].forEach(function(e) {
   document.addEventListener(e, function(event) {
